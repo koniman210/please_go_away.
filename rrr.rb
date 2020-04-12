@@ -15,7 +15,7 @@ end
 def get_total_price(count)
 total_price = self.price*count
 if count >= 5
-   total_price /=5
+   total_price *=0.9
 end
 return total_price
 end
