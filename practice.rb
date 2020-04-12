@@ -6,28 +6,23 @@ menu3 = Menu.new(name:"九州旅行",price:15000)
 
 
 menus=[menu1,menu2,menu3]
-index=1
-menus.each do |menu|
-  puts "#{index}.#{menu.info}"
-  index +=1
 
+menus.each.with_index(1) do |menu|
+  puts "#{menu.info}"
 end
 
 puts "プランを選択してください"
 
 loop do
 order=gets.chomp.to_i
-
-selected_menu = menus[order]
-puts "1~3番からお選びください"
-
-if order <=3
-  puts "#{selected_menu.name}ですね、何人でいきますか？"
+if order == 1 or 2 or 3
 break
-
+else
+  puts "1~3番からお選びください"
 end
 end
-  
+selected_menu = menus[order -1]
+puts "#{selected_menu.name}ですね、何人でいきますか？"
 
 count = gets.chomp.to_i
 if count< 5
